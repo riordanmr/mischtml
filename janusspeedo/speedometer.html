@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <!-- Check out the source code on http://github.com/vjt/canvas-speedometer -->
+    <!-- Modified by Mark Riordan  2021-11-02  to provide an Enter Janus Mode
+         control for the 2021: A Software Odyssey Part 2 video.
+     -->
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+        <link rel="stylesheet" type="text/css" href="speedometer.css" media="screen" />
+
+        <script type="text/javascript" src="xcanvas.js"></script>
+        <script type="text/javascript" src="tbe.js"></script>
+
+        <script type="text/javascript" src="digitaldisplay.js"></script>
+        <script type="text/javascript" src="speedometer.js"></script>
+        <script type="text/javascript" src="themes/default.js"></script>
+
+        <script type="text/javascript" src="example.js"></script>
+        <script type="text/javascript" src="controls.js"></script>
+        <script type="text/javascript">
+          var volts, amperes;
+          var numNodes = 4;
+
+          // Explicit onready listener for modern browsers. If you use a JS framework,
+          // you should replace this code with your toolkit's "onReady" helpers (e.g.
+          // $(document).ready() on jQuery, Event.observe('dom:loaded') on prototype,
+          // and so on.
+          document.addEventListener ("DOMContentLoaded", function() {
+            document.removeEventListener ("DOMContentLoaded", arguments.callee, false);
+
+            // Check out configuration and API on GitHub Wiki:
+            // http://wiki.github.com/vjt/canvas-speedometer
+            volts = new Speedometer ('volts', {theme: 'default', glossy: false, 
+               threshold: 0.01, thresholdPivot: 10.0});
+            volts.draw ();
+            volts.controls = new Controls ('volts-controls', {speedometer: volts});
+            volts.addEventListener ('speedometer:animateend', function () {
+              volts.controls.start ();
+            });
+            volts.controls.start ();
+
+            // amperes = new Speedometer ('amperes', {theme: 'default'});
+            // amperes.draw ()
+            // amperes.controls = new Controls ('amperes-controls', {speedometer: amperes});
+            // amperes.addEventListener ('speedometer:animateend', function () {
+            //   amperes.controls.start ();
+            // });
+            // amperes.controls.start ();
+
+          }, false);
+          function EnterJanusMode() {
+            // volts.controls.start();
+            for(j=2; j<=numNodes; j++) {
+                document.getElementById("node" + j + "name").style="color:black";
+                var statusId = "node" + j + "status";
+                document.getElementById(statusId).style="color:orange";
+                document.getElementById(statusId).innerText = "Connecting";
+            }
+            SetJanusStarted();
+          }
+        </script>
+        <style>
+            .janusbutton {
+                /* height: 90px;  */
+                /* width: 400px;  */
+                font-size: 48pt; 
+                color: coral;
+                cursor: pointer;
+            }
+            .node {
+                padding: 8px;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>
+            <div id="volts" class="speedometer"></div>
+            <div style="text-align: center; font-family: Arial; font-size: 48pt; margin:2pt; ">Files per second</div>
+            <form id="volts-controls" class="controls">
+                <!-- Animate update: --> <input type="button" name="update" value="start" style="display: none";/><br/> 
+                <!-- Animate rescale: <input type="text" name="maxvalue" value="200" />
+                <input type="button" name="rescale" value="rescale" /><br />
+                Operating mode:-->
+                <input type="button" name="rescale" value="rescale" style="display: none;"/>
+                <label>
+                    <input type="radio" name="mode" value="incremental" style="display: none;"/> 
+                </label>
+                <label>
+                    <input type="radio" name="mode" value="random" checked="checked" style="display: none;"/> 
+                </label> 
+            </form>
+        </td>
+        <td>
+            <table style="font-family:Arial, Helvetica, sans-serif; font-size: 40pt; ">
+                <tr id="rnode1">
+                    <td id="node1name" class="node">Node 1&nbsp;</td>
+                    <td id="node1status" style="color:limegreen;">Running</td>
+                </tr>
+                <tr id="rnode2">
+                    <td id="node2name" class="node" style="color:lightgrey">Node 2</td>
+                    <td id="node2status" style="color:lightgrey">Off</td>
+                </tr>
+                <tr id="rnode3">
+                    <td id="node3name" class="node" style="color:lightgrey">Node 3</td>
+                    <td id="node3status" style="color:lightgrey">Off</td>
+                </tr>
+                <tr id="rnode4">
+                    <td id="node4name" class="node" style="color:lightgrey">Node 4</td>
+                    <td id="node4status" style="color:lightgrey">Off</td>
+                </tr>        
+                <tr>
+                    <td id="node4name" class="node" style="color:lightgrey">&nbsp;</td>
+                    <td id="node4status" style="color:lightgrey">&nbsp;</td>
+                </tr>                
+                <!-- <tr>
+                    <td id="node4name" class="node" style="color:lightgrey">&nbsp;</td>
+                    <td id="node4status" style="color:lightgrey">&nbsp;</td>
+                </tr>                 -->
+         
+            </table>
+            <button type="button" class="janusbutton" onclick="EnterJanusMode()">&nbsp;Enter Janus Mode&nbsp;</button>
+        </td>
+
+     </tr></table>
+    </body>
+</html>

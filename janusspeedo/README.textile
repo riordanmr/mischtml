@@ -1,0 +1,28 @@
+h1. Project Janus Speedometer
+
+This is a clone of the "Canvas Speedometer" project (see below) which displays a fake
+speedometer for MOVEit Automation "Project Janus".  It was created by Mark Riordan in Nov 2021
+for a humorous video.   
+
+What follows is text from the original project:
+
+This is a simple speedometer widget implemented using the standard HTML5 Canvas APIs.
+
+It has been tested on Webkit (Safari/Chrome), Gecko (Firefox/Iceweasel/...) and IE starting from version 9.
+
+You can watch a demo "here":http://sindro.me/t/speedometer/speedometer.html
+
+h1. Documentation
+
+Browseable on the "github wiki":http://wiki.github.com/vjt/canvas-speedometer and available in the doc/ subdirectory of the source distribution.
+
+h1. Credits
+
+Original code shared in the public domain by &lt;anonymous&gt; on the 'net
+
+Me ("vjt@openssl.it":http://sindro.me/) did:
+
+* Refactoring, object orientation and firefox quirks workarounds on xcanvas.js
+* Theming support
+* "Documentation":http://wiki.github.com/vjt/canvas-speedometer
+
