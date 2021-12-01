@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <!--  Warning indicator on coffee machine, for Part 3 of 
+           "2021: A Software Odyssey" 
+           MRR  2021-11-30
+        -->
+        <title>
+            Hi-Tech Coffee Machine
+        </title>
+        <style>
+            .centertable {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .centerimage {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                
+            }
+        </style>
+        <script>
+            var textColorIdx=0;
+            var goingUp = true;
+            var totalTicks = 0;
+
+            // The text color should rotate amoungst shades of white to red.
+            // An entire cycle should take 1 second.
+            var minRed = 0xa3;
+            var minGreen = 0x22;
+            var minBlue = 0x39;
+            var msPerCycle = 25;
+            var slots = (1000/msPerCycle) / 2;
+            function DoBlink() {
+                if(goingUp) {
+                    textColorIdx++;
+                    if(textColorIdx >= slots) {
+                        textColorIdx--;
+                        goingUp = false;
+                    }
+                } else {
+                    textColorIdx--;
+                    if(textColorIdx < 0) {
+                        textColorIdx = 0;
+                        goingUp = true;
+                    }
+                }
+                
+                var incrRed = (0xff - minRed) / slots;
+                var incrGreen = (0xff - minGreen) / slots;
+                var incrBlue = (0xff - minBlue) / slots;
+                var colorRed = 0xff - Math.trunc(textColorIdx * incrRed);
+                var colorGreen = 0xff - Math.trunc(textColorIdx * incrGreen);
+                var colorBlue = 0xff - Math.trunc(textColorIdx * incrBlue);
+                //console.debug("R: " + colorRed + " G: " + colorGreen + " B: " + colorBlue);
+                document.getElementById("td1").style.color = "rgb(" + colorRed + "," + colorGreen + "," + colorBlue + ")";
+                if(++totalTicks < 3000) {
+                    setTimeout(DoBlink, msPerCycle);
+                }
+            }
+            function StartBlinking() {
+                setTimeout(DoBlink, msPerCycle);
+            }
+        </script>
+    </head>
+    <body onload="StartBlinking();">
+        <table width=100%>
+            <tr>
+                <td width=100%> 
+                  <table width=90% class="centertable">
+                    <tr>
+                        <td id="td1" style="background-color: 830219; font-family: Helvetica; font-size: 92pt; 
+                        color: ffffff; font-weight: 900; padding: 25pt; text-align: center;">
+                            COFFEE<br/>
+                            MACHINE<br/>
+                            LOCKED
+                        </td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+            <tr height=140px>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="KilroyWasHere.svg" width="45%" class="centerimage"/>
+                </td>
+            </tr>
+            <tr>
+                <td style="font-family: sans-serif; font-size: 3.5em; font-weight: 700; text-align: center;">
+                    JAL WAS HERE
+                </td>
+            </tr>
+
+        </table>
+     </body>
+</html>
