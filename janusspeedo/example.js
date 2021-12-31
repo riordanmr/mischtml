@@ -18,7 +18,7 @@ function randomUpdate (speedometer)
   if (janusStarted) {
     // var target = Math.random () * speedometer.max ();
     // var time = Math.random () * 5000;
-    var time = 2000;
+    var time = 1500;
     var target = 100;
     tick++;
     if (tick <= 4) {
@@ -28,7 +28,9 @@ function randomUpdate (speedometer)
       document.getElementById(statusId).style = "color:limegreen";
       document.getElementById(statusId).innerText = "Running";
     } else {
-      time = 5000;
+      // added by MRR 2021-12-31 to vary the speed a bit once we reach the limit.
+      //time = 5000;
+      target = 100 - 10*Math.random();
     }
     //console.trace("randomUpdate here; time=" + (new Date()).toLocaleTimeString() + " target=" + target + " time=" + time);
     speedometer.animatedUpdate(target, time);
