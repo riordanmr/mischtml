@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <!-- Check out the source code on http://github.com/vjt/canvas-speedometer -->
+    <!-- Modified by Mark Riordan  2021-11-02  to provide an Enter Janus Mode
+         control for the 2021: A Software Odyssey Part 2 video.
+     -->
+    <head>
+        <title>Janus Shutdown</title>
+        <style>
+            .janusbutton {
+                /* height: 90px;  */
+                /* width: 400px;  */
+                font-size: 80pt; 
+                color: coral;
+                cursor: pointer;
+            }
+            .node {
+                padding: 8px;
+            }
+        </style>
+        <script>
+            var nodeShutdown = 1;
+            function RemoveNodeFromClusterStep2() {
+                var statusId = "node" + nodeShutdown + "status";
+                document.getElementById(statusId).style = "color:red";
+                document.getElementById(statusId).innerText = "Disconnected";
+                if(nodeShutdown < 4) {
+                    nodeShutdown++;
+                    setTimeout(RemoveNodeFromClusterStep1, 1000);
+                }
+            }
+            function RemoveNodeFromClusterStep1() {
+                var statusId = "node" + nodeShutdown + "status";
+                document.getElementById(statusId).style = "color:orange";
+                document.getElementById(statusId).innerText = "Disconnecting";
+                setTimeout(RemoveNodeFromClusterStep2, 1000);
+            }
+
+            function StartRemovingNodes() {
+                nodeShutdown = 1;
+                RemoveNodeFromClusterStep1();
+            }
+        </script>
+    </head>
+    <body>
+        <p style="font-family: Arial; font-size:96pt; font-weight: 600; margin-top: 0pt; margin-bottom: 12pt;">Janus Manual Shutdown</p>
+
+        <table style="font-family:Arial, Helvetica, sans-serif; font-size: 96pt; ">
+            <tr id="rnode1">
+                <td id="node1name" class="node">Node 1&nbsp;</td>
+                <td id="node1status" style="color:limegreen;">Running</td>
+            </tr>
+            <tr id="rnode2">
+                <td id="node2name" class="node" >Node 2</td>
+                <td id="node2status" style="color:limegreen;">Running</td>
+            </tr>
+            <tr id="rnode3">
+                <td id="node3name" class="node" >Node 3</td>
+                <td id="node3status" style="color:limegreen;">Running</td>
+            </tr>
+            <tr id="rnode4">
+                <td id="node4name" class="node" >Node 4</td>
+                <td id="node4status" style="color:limegreen;">Running</td>
+            </tr>        
+
+        </table>
+        <button type="button" class="janusbutton" onclick="StartRemovingNodes()">
+            &nbsp;Remove Nodes from Cluster&nbsp;</button>
+    </body>
+</html>

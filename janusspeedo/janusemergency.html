@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <!-- Check out the source code on http://github.com/vjt/canvas-speedometer -->
+    <!-- Modified by Mark Riordan  2021-11-02  to provide an Enter Janus Mode
+         control for the 2021: A Software Odyssey Part 2 video.
+     -->
+    <head>
+        <title>Janus Emergency Control</title>
+        <style>
+            .janusbutton {
+                /* height: 90px;  */
+                /* width: 400px;  */
+                font-size: 48pt; 
+                color: coral;
+                cursor: pointer;
+            }
+            .node {
+                padding: 8px;
+            }
+            .emergency {
+                font-family: 'Arial', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 72pt;
+                font-weight: 600;
+                line-height: 1.4;
+            }
+        </style>
+    </head>
+    <body>
+        <div style='text-align: center;' class='emergency' >JANUS EMERGENCY CONTROL</div>
+        <div style='text-align: center;' class='emergency'>MAXIMUM RESTRICTED ACCESS</div>
+        <div style='text-align: center;' class='emergency'>ENTER SUPER-SECRET PASSWORD</div>
+        <div style='text-align: center;'>
+            <input type="password" class='emergency' style='border-color: black; border-width: 3pt;' value=""/>
+        </div>
+        <div style='text-align: center; ' class='emergency'>
+            <button style='font-size: 72pt; color: red;' onclick="window.location.href='shutdown.html';">Submit</button>
+        </div>
+    </body>
+</html>
