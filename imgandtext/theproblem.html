@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>The Problem</title>
+<!--  Displays an image on the left, and text on the right.
+    Prev and Next buttons let you cycle through a collection of 
+    images and their associated text.
+    Mark R.  2022-01-09  -->
+<style>body, td, p, button { font-family: sans-serif; font-size: 28pt; }
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+button {
+    font-size: 40pt;
+}
+</style>
+<script src="prdefs.js"></script>
+<script>
+    var curIdx;
+    var nImages;
+    function LoadImage(idx) {
+        document.getElementById("primg").src = "ImageOnly/" + arydefs[idx].img;
+        document.getElementById("prtxt").innerText = arydefs[idx].saying;
+    }
+    function EnableButtonsIfAppropriate() {
+        document.getElementById("buttonprev").disabled = (curIdx <= 0);
+        document.getElementById("buttonnext").disabled = (curIdx >= nImages-1);
+    }
+    function Initialize() {
+        curIdx = 0;
+        LoadImage(curIdx);
+        nImages = arydefs.length;
+        EnableButtonsIfAppropriate() 
+    }
+    function OnClickPrev() {
+        curIdx--;
+        EnableButtonsIfAppropriate();
+        LoadImage(curIdx);
+    }
+    function OnClickNext() {
+        curIdx++;
+        EnableButtonsIfAppropriate();
+        LoadImage(curIdx);
+    }
+
+</script>
+</head>
+<body onload="Initialize();">
+<table width="100%">
+  <tr style="vertical-align: center;">
+    <td width="70%"><img id="primg" src=""/></td>
+    <td style="padding-left: 0.5em; height: 100%;">
+        <p id="prtxt"></p>
+        <div style="position: absolute; bottom: 0;">
+            <button id="buttonprev" onclick="OnClickPrev();">Prev</button>
+            <button id="buttonnext" onclick="OnClickNext();">Next</button>
+        </div>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
