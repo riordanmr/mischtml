@@ -10,7 +10,7 @@ var arydefs = [
     {'img': 'primg-9a.PNG', 'saying': "We got guilt feelings when we stood up for ourselves rather than giving in to others."},
     {'img': 'primg-10a.PNG', 'saying': "Thus, we became reactors, rather than actors, letting others take the initiative."},
     {'img': 'primg-11c.PNG', 'saying': "We were dependent personalities, terrified of abandonment, willing to do almost anything to hold on to a relationship in order not to be abandoned emotionally."},
-    {'img': 'primg-12a.PNG', 'saying': "Yet we kept choosing insecure relationships because they matched our childhood relationship with alcoholic or dysfunctional parents."},
+    {'img': 'primg-12b.PNG', 'saying': "Yet we kept choosing insecure relationships because they matched our childhood relationship with alcoholic or dysfunctional parents."},
     {'img': 'primg-13a.PNG', 'saying': "These symptoms of the family disease of alcoholism or other dysfunction made us 'co-victims', those who take on the characteristics of the disease without necessarily ever taking a drink."},
     {'img': 'primg-14a.PNG', 'saying': "We learned to keep our feelings down as children and kept them buried as adults."},
     {'img': 'primg-15a.PNG', 'saying': "As a result of this conditioning, we confused love with pity, tending to love those we could rescue."},

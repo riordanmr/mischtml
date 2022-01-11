@@ -29,6 +29,7 @@ button {
         document.getElementById("primg").src = "ImageOnly/1x1.png";
         document.getElementById("primg").src = "ImageOnly/" + arydefs[idx].img;
         document.getElementById("prtxt").innerText = arydefs[idx].saying;
+        document.getElementById("number").innerText = idx+1;
     }
     function EnableButtonsIfAppropriate() {
         document.getElementById("buttonprev").disabled = (curIdx <= 0);
@@ -58,6 +59,9 @@ button {
   <tr style="vertical-align: center;">
     <td width="70%"><img id="primg" class="autoResizeImage" src=""/></td>
     <td style="padding-left: 0.5em; height: 100%;">
+        <div style="position: absolute; top: 0;">
+            <span id="number"></span>
+        </div>
         <p id="prtxt"></p>
         <div style="position: absolute; bottom: 0;">
             <button id="buttonprev" onclick="OnClickPrev();">Prev</button>
