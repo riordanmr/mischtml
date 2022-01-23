@@ -6,7 +6,7 @@ var arydefs = [
     {'img': 'primg-5c.jpg', 'final': true, 'saying': "We either became alcoholics (or practiced other addictive behavior) ourselves, or married them, or both."},
     {'img': 'primg-6c.jpg', 'final': true, 'saying': "Failing that, we found other compulsive personalities, such as a workaholic, to fulfill our sick need for abandonment."},
     {'img': 'primg-7c.jpg', 'final': false, 'saying': "We lived life from the standpoint of victims."},
-    {'img': 'primg-8e.jpg', 'final': true, 'saying': "Having an overdeveloped sense of responsibility, we preferred to be concerned with others rather than ourselves."},
+    {'img': 'primg-8d.jpg', 'final': true, 'saying': "Having an overdeveloped sense of responsibility, we preferred to be concerned with others rather than ourselves."},
     {'img': 'primg-9a.jpg', 'final': true, 'saying': "We got guilt feelings when we stood up for ourselves rather than giving in to others."},
     {'img': 'primg-10d.jpg', 'final': false, 'saying': "Thus, we became reactors, rather than actors, letting others take the initiative."},
     {'img': 'primg-11c.jpg', 'final': true, 'saying': "We were dependent personalities, terrified of abandonment, willing to do almost anything to hold on to a relationship in order not to be abandoned emotionally."},
