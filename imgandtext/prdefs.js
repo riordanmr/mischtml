@@ -1,4 +1,5 @@
-var arydefs = [
+var arydefs = 
+[
     {'img': 'primg-1f.jpg', 'final': true, 'saying': "Many of us found that we had several characteristics in common as a result of being brought up in an alcoholic or dysfunctional household."},
     {'img': 'primg-2b.jpg', 'final': true, 'saying': "We had come to feel isolated and uneasy with other people, especially authority figures."},
     {'img': 'primg-3b.jpg', 'final': true, 'saying': "To protect ourselves, we became people-pleasers, even though we lost our own identities in the process."},
@@ -11,9 +12,9 @@ var arydefs = [
     {'img': 'primg-10i.jpg', 'final': false, 'saying': "Thus, we became reactors, rather than actors, letting others take the initiative."},
     {'img': 'primg-11c.jpg', 'final': true, 'saying': "We were dependent personalities, terrified of abandonment, willing to do almost anything to hold on to a relationship in order not to be abandoned emotionally."},
     {'img': 'primg-12b.jpg', 'final': true, 'saying': "Yet we kept choosing insecure relationships because they matched our childhood relationship with alcoholic or dysfunctional parents."},
-    {'img': 'primg-13a.jpg', 'final': true, 'saying': "These symptoms of the family disease of alcoholism or other dysfunction made us 'co-victims', those who take on the characteristics of the disease without necessarily ever taking a drink."},
+    {'img': 'primg-13a.jpg', 'final': true, 'saying': "These symptoms of the family disease of alcoholism or other dysfunction made us \"co-victims\", those who take on the characteristics of the disease without necessarily ever taking a drink."},
     {'img': 'primg-14b.jpg', 'final': true, 'saying': "We learned to keep our feelings down as children and kept them buried as adults."},
-    {'img': 'primg-15a.jpg', 'final': false, 'saying': "As a result of this conditioning, we confused love with pity, tending to love those we could rescue."},
+    {'img': 'primg-15h.jpg', 'final': false, 'saying': "As a result of this conditioning, we confused love with pity, tending to love those we could rescue."},
     {'img': 'primg-16e.jpg', 'final': true, 'saying': "Even more self-defeating, we became addicted to excitement in all our affairs, preferring constant upset to workable relationships."},
     {'img': 'primg-17f.jpg', 'final': false, 'saying': "This is a description, not an indictment."}
 ];
