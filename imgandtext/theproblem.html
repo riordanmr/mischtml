@@ -39,17 +39,36 @@ button {
         curIdx = 0;
         LoadImage(curIdx);
         nImages = arydefs.length;
-        EnableButtonsIfAppropriate() 
+        EnableButtonsIfAppropriate();
+        
+        // Enable handling of keystrokes for navigation.
+        window.addEventListener("keydown", function(event) {
+            if (event.defaultPrevented) {
+                return;
+            }
+            if (event.code === "ArrowLeft"){
+                // Handle "left"
+                OnClickPrev();
+            } else if (event.code === "ArrowRight"){
+                // Handle "right"
+                OnClickNext();
+            }
+            event.preventDefault();
+            }, true);
     }
     function OnClickPrev() {
-        curIdx--;
-        EnableButtonsIfAppropriate();
-        LoadImage(curIdx);
+        if(curIdx>0) {
+            curIdx--;
+            EnableButtonsIfAppropriate();
+            LoadImage(curIdx);
+        }
     }
     function OnClickNext() {
-        curIdx++;
-        EnableButtonsIfAppropriate();
-        LoadImage(curIdx);
+        if (curIdx < arydefs.length - 1) {
+            curIdx++;
+            EnableButtonsIfAppropriate();
+            LoadImage(curIdx);
+        }
     }
 
 </script>
