@@ -40,7 +40,7 @@ button {
         LoadImage(curIdx);
         nImages = arydefs.length;
         EnableButtonsIfAppropriate();
-        
+
         // Enable handling of keystrokes for navigation.
         window.addEventListener("keydown", function(event) {
             if (event.defaultPrevented) {
@@ -52,9 +52,21 @@ button {
             } else if (event.code === "ArrowRight"){
                 // Handle "right"
                 OnClickNext();
+            } else if(event.code === "Home") {
+                GoToFirstImage();
+            } else if(event.code === "End") {
+                GoToLastImage();
             }
             event.preventDefault();
             }, true);
+    }
+    function GoToFirstImage() {
+        curIdx = 0;
+        LoadImage(curIdx);
+    }
+    function GoToLastImage() {
+        curIdx = arydefs.length - 1;
+        LoadImage(curIdx);
     }
     function OnClickPrev() {
         if(curIdx>0) {
