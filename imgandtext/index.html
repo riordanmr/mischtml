@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>The (ACA) Problem</title>
+        <title>Temp</title>
         <style>
             .aca {
                 font-family: sans-serif; font-size: 72pt;
@@ -14,18 +14,44 @@
                 text-align: center; color: olivedrab;
             }
         </style>
+        <script>
+            function GoToPage() {
+                // Propagate the current page's "s" query string value to the URL we will visit.
+                const urlParams = new URLSearchParams(window.location.search);
+                const sayingType = urlParams.get('s');
+                var url = 'theproblem.html?s=';
+                if(sayingType == 'so') {
+                    url += "so";
+                } else {
+                    url += "pr";
+                }
+                window.location.href = url;
+            }
+            function Initialize() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const sayingType = urlParams.get('s');
+                var mytitle;
+                if(sayingType == "so") {
+                    mytitle = 'The (ACA) Solution';
+                } else {
+                    mytitle = 'The (ACA) Problem';
+                }
+                document.getElementById('mytitle').innerHTML = mytitle;
+                document.title = mytitle;
+            }
+        </script>
     </head>
-    <body>
+    <body onload='Initialize();'>
         <div class="aca">
             <p>&nbsp;</p>
-            <p>The (ACA) Problem</p>
+            <p id='mytitle'></p>
             <p class="comment">Illustrated with images created by StarryAI</p>
             
         </div>
         <div class="aca">
             <p>&nbsp;</p>
             <button class="acabutton"
-              onclick="window.location.href='theproblem.html'">
+              onclick="GoToPage();">
                 &nbsp;Start&nbsp;
             </button>
         </div>

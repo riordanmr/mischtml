@@ -1,4 +1,4 @@
-var arydefs = 
+var arypr = 
 [
     {'img': 'primg-1f.jpg', 'final': true, 'saying': "Many of us found that we had several characteristics in common as a result of being brought up in an alcoholic or dysfunctional household."},
     {'img': 'primg-2b.jpg', 'final': true, 'saying': "We had come to feel isolated and uneasy with other people, especially authority figures."},

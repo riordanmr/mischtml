@@ -1,9 +1,11 @@
 <html>
 <head>
-<title>The Problem</title>
+<title></title>
 <!--  Displays an image on the left, and text on the right.
     Prev and Next buttons let you cycle through a collection of 
     images and their associated text.
+    This page takes an optional query string parameter: s={pr|so}
+    for The Problem (default) or The Solution.
     Mark R.  2022-01-09  -->
 <style>
 body, td, p, button { font-family: sans-serif; font-size: 28pt; }
@@ -17,7 +19,9 @@ button {
 }
 </style>
 <script src="prdefs.js"></script>
+<script src="sodefs.js"></script>
 <script>
+    var arydefs;
     var curIdx;
     var nImages;
     function LoadImage(idx) {
@@ -26,8 +30,8 @@ button {
         // So first set the image to a small invible image, and then set the
         // actual desired image filename.  If the file does not exist, it will
         // then be more obvious.
-        document.getElementById("primg").src = "ImageOnly/1x1.png";
-        document.getElementById("primg").src = "ImageOnly/" + arydefs[idx].img;
+        document.getElementById("primg").src = "images/1x1.png";
+        document.getElementById("primg").src = "images/" + arydefs[idx].img;
         document.getElementById("prtxt").innerText = arydefs[idx].saying;
         document.getElementById("number").innerText = idx+1;
     }
@@ -36,6 +40,17 @@ button {
         document.getElementById("buttonnext").disabled = (curIdx >= nImages-1);
     }
     function Initialize() {
+        // Recognize the query string s=pr or s=so (defaults to s=pr).
+        const urlParams = new URLSearchParams(window.location.search);
+        const sayingType = urlParams.get('s');
+        if(sayingType == 'so') {
+            document.title = 'The Solution';
+            arydefs = aryso;
+        } else {
+            document.title = 'The Problem';
+            arydefs = arypr;
+        }
+
         curIdx = 0;
         LoadImage(curIdx);
         nImages = arydefs.length;

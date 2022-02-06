@@ -1,4 +1,4 @@
-var arydefs = 
+var aryso = 
 [
     {"img": "soimg-1a.jpg", "final": false, "saying": "The solution is to become your own loving parent."},
     {"img": "soimg-2a.jpg", "final": false, "saying": "As ACA becomes a safe place for you, you will find freedom to express all the hurts and fears you have kept inside and to free yourself from the shame and blame that are carryovers from the past."},
