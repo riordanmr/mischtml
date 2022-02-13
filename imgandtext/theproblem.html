@@ -33,7 +33,7 @@ button {
         document.getElementById("primg").src = "images/1x1.png";
         document.getElementById("primg").src = "images/" + arydefs[idx].img;
         document.getElementById("prtxt").innerText = arydefs[idx].saying;
-        document.getElementById("number").innerText = idx+1;
+        document.getElementById("number").innerText = (idx+1) + " of " + arydefs.length;
     }
     function EnableButtonsIfAppropriate() {
         document.getElementById("buttonprev").disabled = (curIdx <= 0);
