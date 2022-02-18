@@ -25,7 +25,7 @@ end
 function GetJSON()
     -- Read the JSON file, skipping the first line, which the JSON
     -- decoding routine doesn't like.
-    local filejs = io.open('prdefs.js')
+    local filejs = io.open('sodefs.js')
     local first = true
     local json = ''
     for line in filejs:lines() do
@@ -55,7 +55,7 @@ function DetermineSmallFiles()
 
     -- Loop through the given directory, looking for the files named in the JSON.
     require 'lfs'
-    local subdir = "ImageOnly"
+    local subdir = "images"
     for file in lfs.dir(subdir) do
         local filename = file
         local bThisIsUsed = false
