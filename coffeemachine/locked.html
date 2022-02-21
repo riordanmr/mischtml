@@ -54,7 +54,7 @@
                 var colorBlue = 0xff - Math.trunc(textColorIdx * incrBlue);
                 //console.debug("R: " + colorRed + " G: " + colorGreen + " B: " + colorBlue);
                 document.getElementById("td1").style.color = "rgb(" + colorRed + "," + colorGreen + "," + colorBlue + ")";
-                if(++totalTicks < 3000) {
+                if(++totalTicks < 16000) {
                     setTimeout(DoBlink, msPerCycle);
                 }
             }
