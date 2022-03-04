@@ -21,7 +21,7 @@ var aryso =
     {"img": "soimg-19f.jpg", "final": true, "saying": "You will learn to keep the focus on yourself in the here and now."},
     {"img": "soimg-20b.jpg", "final": true, "saying": "You will take responsibility for your own life and supply your own parenting."},
     {"img": "soimg-21d.jpg", "final": true, "saying": "You will not do this alone."},
-    {"img": "soimg-22a.jpg", "final": false, "saying": "Look around you and you will see others who know how you feel."},
+    {"img": "soimg-22l.jpg", "final": false, "saying": "Look around you and you will see others who know how you feel."},
     {"img": "soimg-23f.jpg", "final": false, "saying": "We will love and encourage you no matter what."},
     {"img": "soimg-24c.jpg", "final": false, "saying": "We ask you to accept us just as we accept you."},
     {"img": "soimg-25a.jpg", "final": true, "saying": "This is a spiritual program based on action coming from love."},
