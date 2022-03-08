@@ -24,6 +24,6 @@ var aryso =
     {"img": "soimg-22l.jpg", "final": false, "saying": "Look around you and you will see others who know how you feel."},
     {"img": "soimg-23f.jpg", "final": false, "saying": "We will love and encourage you no matter what."},
     {"img": "soimg-24c.jpg", "final": false, "saying": "We ask you to accept us just as we accept you."},
-    {"img": "soimg-25a.jpg", "final": true, "saying": "This is a spiritual program based on action coming from love."},
+    {"img": "soimg-25b.jpg", "final": true, "saying": "This is a spiritual program based on action coming from love."},
     {"img": "soimg-26a.jpg", "final": true, "saying": "We are sure that as the love grows inside you, you will see beautiful changes in all your relationships, especially with God, yourself, and your parents."}
 ];
