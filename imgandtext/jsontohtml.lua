@@ -1,9 +1,9 @@
 --[[ 
-    jsontohtml.lua - script to find files that:
-    - Are present in a specific directory
-    - Appear in a JSON array
-    - Have a small size
+    jsontohtml.lua - script to read a JSON file containing
+    "sayings" and create an HTML file from that input.
     /mrr  2022-01-25
+
+    Usage:  lua jsontohtml.lua
 ]]
 
 --[[ Read JSON containing the names of files we will examine.
@@ -25,7 +25,7 @@ end
 function GetJSON()
     -- Read the JSON file, skipping the first line, which the JSON
     -- decoding routine doesn't like.
-    local filejs = io.open('prdefs.js')
+    local filejs = io.open('sodefs.js')
     local first = true
     local json = ''
     for line in filejs:lines() do
