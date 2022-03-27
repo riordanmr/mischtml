@@ -3,15 +3,35 @@
         <title>The Solution (numbered)</title>
         <style>
             h1 {font-family: sans-serif; font-size: 28pt;}
-            li {font-family: 'IBM Plex Serif',Georgia; font-size: 16pt;}
-            .mycol { column-count: 2;
+            li {font-family: 'IBM Plex Serif', Helvetica; font-size: 14pt;}
+            .col2 { column-count: 2;
                 column-gap: 5em;
             }
+            .col1 {
+                column-count: 1;
+            }
         </style>
+        <script>
+            // Call this to toggle the display of the second half of the solutions.
+            // This also changes the number of columns.
+            function ChangeColumns() {
+                var curClass = document.getElementById("mylist").className;
+                var newClass, newDisplay;
+                if(curClass=="col1") {
+                    newClass = "col2";
+                    newDisplay = "block";
+                } else {
+                    newClass = "col1";
+                    newDisplay = "none";
+                }
+                document.getElementById("mylist").className = newClass;
+                document.getElementById("span2").style.display = newDisplay;
+            }
+        </script>
     </head>
     <body>
-        <h1>The Solution</h1>
-        <ol class="mycol"">
+        <h1 onclick="ChangeColumns();">The Solution</h1>
+        <ol id="mylist" class="col2"">
 <li>The solution is to become your own loving parent.</li>
 <li>As ACA becomes a safe place for you, you will find freedom to express all the hurts and fears you have kept inside and to free yourself from the shame and blame that are carryovers from the past.</li>
 <li>You will become an adult who is imprisoned no longer by childhood reactions.</li>
@@ -25,6 +45,7 @@
 <li>Although we had alcoholic or dysfunctional parents, our Higher Power gave us the Twelve Steps of Recovery.</li>
 <li>This is the action and work that heals us: we use the Steps; we use the meetings; we use the telephone.</li>
 <li>We share our experience, strength, and hope with each other.</li>
+<span id="span2">
 <li>We learn to restructure our sick thinking one day at a time.</li>
 <li>When we release our parents from responsibility for our actions today, we become free to make healthful decisions as actors, not reactors.</li>
 <li>We progress from hurting, to healing, to helping.</li>
@@ -38,6 +59,7 @@
 <li>We ask you to accept us just as we accept you.</li>
 <li>This is a spiritual program based on action coming from love.</li>
 <li>We are sure that as the love grows inside you, you will see beautiful changes in all your relationships, especially with God, yourself, and your parents.</li>
+</span>
 </ol>
 </body>
 </html>
