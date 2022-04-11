@@ -3,12 +3,15 @@
         <title>The Solution (numbered)</title>
         <style>
             h1 {font-family: sans-serif; font-size: 28pt;}
-            li {font-family: 'IBM Plex Serif', Helvetica; font-size: 14pt;}
+            li {font-family: 'IBM Plex Serif', Helvetica; }
             .col2 { column-count: 2;
-                column-gap: 5em;
+                column-gap: 5em; font-size: 14pt;
             }
             .col1 {
-                column-count: 1;
+                column-count: 1; font-size: 18pt; 
+            }
+            .col1b {
+                column-count: 1; font-size: 18pt;
             }
         </style>
         <script>
@@ -16,22 +19,31 @@
             // This also changes the number of columns.
             function ChangeColumns() {
                 var curClass = document.getElementById("mylist").className;
-                var newClass, newDisplay;
+                var newClass, startNum=1;
                 if(curClass=="col1") {
                     newClass = "col2";
-                    newDisplay = "block";
+                    document.getElementById("span1").style.display = "block";
+                    document.getElementById("span2").style.display = "block";
+                } else if(curClass=="col2") {
+                    newClass = "col1b";
+                    startNum = 14;
+                    document.getElementById("span1").style.display = "none";
+                    document.getElementById("span2").style.display = "block";
                 } else {
+                    // Class was col1b
                     newClass = "col1";
-                    newDisplay = "none";
+                    document.getElementById("span1").style.display = "block";         
+                    document.getElementById("span2").style.display = "none";                  
                 }
                 document.getElementById("mylist").className = newClass;
-                document.getElementById("span2").style.display = newDisplay;
+                document.getElementById("mylist").start = startNum;
             }
         </script>
     </head>
     <body>
         <h1 onclick="ChangeColumns();">The Solution</h1>
-        <ol id="mylist" class="col2"">
+        <ol id="mylist" class="col2">
+<span id="span1">
 <li>The solution is to become your own loving parent.</li>
 <li>As ACA becomes a safe place for you, you will find freedom to express all the hurts and fears you have kept inside and to free yourself from the shame and blame that are carryovers from the past.</li>
 <li>You will become an adult who is imprisoned no longer by childhood reactions.</li>
@@ -45,6 +57,7 @@
 <li>Although we had alcoholic or dysfunctional parents, our Higher Power gave us the Twelve Steps of Recovery.</li>
 <li>This is the action and work that heals us: we use the Steps; we use the meetings; we use the telephone.</li>
 <li>We share our experience, strength, and hope with each other.</li>
+</span>
 <span id="span2">
 <li>We learn to restructure our sick thinking one day at a time.</li>
 <li>When we release our parents from responsibility for our actions today, we become free to make healthful decisions as actors, not reactors.</li>
