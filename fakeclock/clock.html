@@ -1,0 +1,48 @@
+<html>
+    <!--
+        Fake clock, for my DMZ video.  
+        Mark Riordan  2022-05-29
+    -->
+    <head>
+        <style>
+            .myclock {
+                font-family: monospace;
+                font-size: 180pt;
+                padding: 0pt;
+                margin: 0pt;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        </style>
+        <script>
+            var bColonVisible = false;
+            var msColonBlink = 500;
+
+            function DoBlink() {
+                bColonVisible = !bColonVisible;
+                if(bColonVisible) {
+                    document.getElementById("colon").innerHTML = ":";
+                } else {
+                    document.getElementById("colon").innerHTML = "&nbsp;";
+                }
+                setTimeout(DoBlink, msColonBlink);
+            }
+            function startTimer() {
+                setTimeout(DoBlink, msColonBlink);
+            }
+        </script>
+    </head>
+    <body onload="startTimer();">
+        <div>
+        <table class="myclock" cellspacing="0pt" cellpadding="0pt" border-spacing="0pt">
+            <tr>
+                <td id="hours">10</td>
+                <td id="colon"></td>
+                <td id="minutes">15</td>
+            </tr>
+        </table>
+        </div>
+    </body>
+</html>
