@@ -4,10 +4,11 @@
         Mark Riordan  2022-05-29
     -->
     <head>
+        <title>Clock</title>
         <style>
             .myclock {
                 font-family: monospace;
-                font-size: 180pt;
+                font-size: 220pt;
                 padding: 0pt;
                 margin: 0pt;
                 position: absolute;
@@ -19,6 +20,7 @@
         <script>
             var bColonVisible = false;
             var msColonBlink = 500;
+            var idxTime = 0;
 
             function DoBlink() {
                 bColonVisible = !bColonVisible;
@@ -32,11 +34,31 @@
             function startTimer() {
                 setTimeout(DoBlink, msColonBlink);
             }
+            function ChangeTime() {
+                var hours, minutes;
+                if(idxTime == 0) {
+                    hours = "10";
+                    minutes = "30";
+                } else if(idxTime == 1) {
+                    hours = "10";
+                    minutes = "37";
+                } else if(idxTime == 2) {
+                    hours = "1";
+                    minutes = "35";
+                } else {
+                    hours = "10";
+                    minutes = "15";
+                    idxTime = -1;
+                }
+                idxTime++;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+            }
         </script>
     </head>
     <body onload="startTimer();">
         <div>
-        <table class="myclock" cellspacing="0pt" cellpadding="0pt" border-spacing="0pt">
+        <table class="myclock" cellspacing="0pt" cellpadding="0pt" border-spacing="0pt" onclick="ChangeTime();">
             <tr>
                 <td id="hours">10</td>
                 <td id="colon"></td>
