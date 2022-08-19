@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Temp</title>
+        <style>
+            .aca {
+                font-family: sans-serif; font-size: 72pt;
+                text-align: center;
+            }
+            .title {
+                font-weight: bold;
+            }
+            .comment {
+                font-family: Georgia; font-size: 48pt;
+            }
+            .acabutton {
+                font-family: sans-serif; font-size: 72pt;
+                text-align: center; color: olivedrab;
+            }
+        </style>
+        <script>
+            function GoToPage() {
+                // Propagate the current page's "s" query string value to the URL we will visit.
+                const urlParams = new URLSearchParams(window.location.search);
+                const sayingType = urlParams.get('s');
+                var url = 'theproblem.html?s=';
+                if(sayingType == 'so') {
+                    url += "so";
+                } else {
+                    url += "pr";
+                }
+                window.location.href = url;
+            }
+            function Initialize() {
+                const urlParams = new URLSearchParams(window.location.search);
+                var mytitle = 'ACA image association';
+                document.title = mytitle;
+            }
+        </script>
+    </head>
+    <body onload='Initialize();'>
+        <div class="aca">
+            <p class="title">ACA-related images</p>
+            <!-- <p id='mytitle'></p> -->
+            <p class="comment">Featuring images created by openai.com</p>
+            
+        </div>
+        <div class="aca">
+            <!-- <button class="acabutton"
+              onclick="GoToPage();">
+                &nbsp;Start&nbsp;
+            </button> -->
+            <p><a href="assoc.html">Enter image association exercise</a></p>
+        </div>
+    </body>
+</html>
