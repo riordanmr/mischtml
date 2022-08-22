@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Temp</title>
+        <title>ACA Image Landing Page</title>
         <style>
             .aca {
                 font-family: sans-serif; font-size: 72pt;
@@ -18,18 +18,6 @@
             }
         </style>
         <script>
-            function GoToPage() {
-                // Propagate the current page's "s" query string value to the URL we will visit.
-                const urlParams = new URLSearchParams(window.location.search);
-                const sayingType = urlParams.get('s');
-                var url = 'theproblem.html?s=';
-                if(sayingType == 'so') {
-                    url += "so";
-                } else {
-                    url += "pr";
-                }
-                window.location.href = url;
-            }
             function Initialize() {
                 const urlParams = new URLSearchParams(window.location.search);
                 var mytitle = 'ACA image association';
@@ -45,10 +33,6 @@
             
         </div>
         <div class="aca">
-            <!-- <button class="acabutton"
-              onclick="GoToPage();">
-                &nbsp;Start&nbsp;
-            </button> -->
             <p><a href="assoc.html">Enter image association exercise</a></p>
         </div>
     </body>
