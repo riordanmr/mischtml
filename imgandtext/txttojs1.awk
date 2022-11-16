@@ -14,5 +14,5 @@
     #print "    {'img': 'primg-" num "a.PNG', 'saying': \"" txt "\"},"
     num = NR
     txt = line
-    print "    {\"img\": \"soimg-" num "a.jpg\", \"final\": false, \"saying\": \"" txt "\"},"
+    print "    {\"img\": \"seimg-" num "a.jpg\", \"final\": false, \"saying\": \"" txt "\"},"
 }

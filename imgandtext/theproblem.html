@@ -8,7 +8,7 @@
     for The Problem (default) or The Solution.
     Mark R.  2022-01-09  -->
 <style>
-body, td, p, button { font-family: sans-serif; font-size: 28pt; }
+body, td, p, button { font-family: sans-serif, Georgia, serif; font-size: 28pt; }
 .autoResizeImage {
     max-width: 100%;
     height: auto;
@@ -20,6 +20,7 @@ button {
 </style>
 <script src="prdefs.js"></script>
 <script src="sodefs.js"></script>
+<script src="sedefs.js"></script>
 <script>
     var arydefs;
     var curIdx;
@@ -46,6 +47,9 @@ button {
         if(sayingType == 'so') {
             document.title = 'The Solution';
             arydefs = aryso;
+        } else if(sayingType == 'se') {
+            document.title = 'Inner Child Self-Esteem'
+            arydefs = aryse;
         } else {
             document.title = 'The Problem';
             arydefs = arypr;
