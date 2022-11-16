@@ -14,6 +14,9 @@ body, td, p, button { font-family: sans-serif, Georgia, serif; font-size: 28pt; 
     height: auto;
     width: 100%;
 }
+.prtxt {
+    font-family: Georgia; font-size: 24pt;
+}
 button {
     font-size: 40pt;
 }
@@ -107,12 +110,12 @@ button {
 <body onload="Initialize();">
 <table width="100%">
   <tr style="vertical-align: center;">
-    <td width="70%"><img id="primg" class="autoResizeImage" src=""/></td>
+    <td width="65%"><img id="primg" class="autoResizeImage" src=""/></td>
     <td style="padding-left: 0.5em; height: 100%;">
         <div style="position: absolute; top: 0;">
             <span id="number"></span>
         </div>
-        <p id="prtxt"></p>
+        <p class="prtxt" id="prtxt"></p>
         <div style="position: absolute; bottom: 0;">
             <button id="buttonprev" onclick="OnClickPrev();">Prev</button>
             <button id="buttonnext" onclick="OnClickNext();">Next</button>
