@@ -84,10 +84,12 @@ button {
     }
     function GoToFirstImage() {
         curIdx = 0;
+        EnableButtonsIfAppropriate();
         LoadImage(curIdx);
     }
     function GoToLastImage() {
         curIdx = arydefs.length - 1;
+        EnableButtonsIfAppropriate();
         LoadImage(curIdx);
     }
     function OnClickPrev() {
