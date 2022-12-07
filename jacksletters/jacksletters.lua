@@ -113,7 +113,7 @@ function finishLetter()
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
     for j=1,numImages do
         filename = curDate .. string.sub(alphabet,j,j) .. '.jpg'
-        outLine('    <br/>')
+        outLine('    <p/>')
         outLine('    <img src="images/' .. filename .. '" width="100%"/>')
     end
     outLine('  </div>')
@@ -136,7 +136,7 @@ function main()
     for line in filein:lines() do
         isCmd, cmd, arg1 = parseCmd(line)
         if isCmd then 
-            print("main got cmd",cmd)
+            --print("main got cmd",cmd)
             if cmd=='date' then
                 inLetters = true
                 -- Initial paragraphs of a letter are not indented.
@@ -156,7 +156,7 @@ function main()
                 print("** Error at ",line)
             end
         elseif inLetters then
-            -- We are inside a letter.  Make the input line into HTML, 
+            -- We are inside a letter.  Convert the input line to HTML, 
             -- computing its CSS class via simple heuristics.
             html = line:gsub('&','&amp;')
             if indenting then
@@ -168,6 +168,7 @@ function main()
             --print(html)
             isDearLine = line:starts("Dear")
             if isDearLine then
+                -- Separate the Dear line from the lines above.
                 outLine('    <br/>')
             end
             outLine(html)
