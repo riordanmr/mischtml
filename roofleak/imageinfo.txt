@@ -1,0 +1,15 @@
+0100Ceiling.jpg|Leak on bathroom ceiling 
+0110CeilingCloseup.jpg|Closeup of leak on ceiling
+0120PuddleBelowCeilingLeak.jpg|Puddle below leak
+0200GeneralArea.jpg|According to my calculations, the roof leak is likely somewhere in this picture
+0210WaterHeaterStrut.jpg|Under the solar water heater. A lot of these photos are of the solar unit, but I don't know whether the problem is around that unit
+0220WaterHeaterStrut2.jpg
+0230WaterHeaterBeneath.jpg
+0240WaterHeaterBeneath2.jpg
+0250WaterHeaterBeneath3.jpg
+0260WaterHeaterBeneath4.jpg
+0270WaterHeaterBeneath5.jpg
+0280WaterHeaterBeneath6.jpg
+0300WaterHeaterBeside.jpg
+0400Pedestal.jpg|Not sure what this pedestal is.
+0500DrainOnWall.jpg|This is where the water from the roof drains out
